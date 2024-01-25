@@ -1,0 +1,43 @@
+Getting Anaconda up and running 
+conda update -n base -c defaults conda 
+Note: Run this only when you get SSL issues conda config --set ssl_verify false Most times running your command again will solve the SSL error 
+conda create -n test_env (it will most likely get created here C:\ProgramData\anaconda3\envs\test_env) 
+conda info --envs (to list your envs) 
+conda activate test_env 
+ 
+Install packages  
+Rather use the Anaconda Navigator, but you can use the below commands as well. When using navigator, just make sure you select the relevant packages in our env (select the env by clicking “Environments” in the left-hand window) 
+Install IPYKernel as well 
+conda install -c anaconda py-xgboost 
+conda install -c anaconda pandas 
+conda install -c anaconda numpy 
+Hyperopt must be installed with pip install hyperopt in your admin conda powershell with your env activated 
+ 
+Jupyter Config Setup 
+Open Anaconda Powershell 
+Then run this command: jupyter --config-dir 
+It will tell you where the config is located.  
+If there is no .jupyter folder or file in it, run jupyter notebook –generate-config 
+A py file will be generated. Rename it to .json and put the below json config in there 
+The config file should look as such (set a password if you haven’t already or just change password: to ‘’ if you have any issues): 
+{ 
+  "NotebookApp": { 
+    "password": "argon2:$argon2idxxx", 
+    "notebook_dir": "D:/jupyter_notebooks", 
+    "ip": "10.10.63.47", 
+    "allow_origin": "10.10.63.0/24", 
+    "port":8888 
+  } 
+} 
+ 
+ 
+Now add your venv to jupyter 
+Make sure you active your new conda env 
+python -m ipykernel install --user --name=test_env 
+You will get this message: Installed kernelspec test_env in C:\Users\<you_user>\AppData\Roaming\jupyter\kernels\test_env 
+Restart your Jupyter powershell (the command below) and you will be able to select your env 
+ 
+Start Anaconda with this command:  
+If you havent installed Jupyter from the Anaconda Navigator yet, you must first install it 
+jupyter notebook --no-browser --port=8888 (you dont have to specify port because we specify it in the config, but you can override the config in your startup command) 
+You can now access Jupyter over the network from any device in the allowed origin range (see config above) 
