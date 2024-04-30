@@ -1,6 +1,10 @@
 # ml_and_ai_projects
 
-# opencv_stuff
+### Langchain Text Splitter Visualizer
+https://chunkviz.up.railway.app/
+
+
+### opencv_stuff
 opencv and Restnet stuff
 
 Mainly from pyimagesearch. That guy is legit. Please check him out.
