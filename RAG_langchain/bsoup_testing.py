@@ -13,7 +13,7 @@ service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
 try:
-	driver.get('https://nutun.com/services/transact/payment-solutions')
+	driver.get('https://websiteGoesHere.com')
 	time.sleep(5)  # Adjust the sleep time based on your internet speed and page complexity
 	
 	driver.execute_script("window.scrollTo(0, 4000)")

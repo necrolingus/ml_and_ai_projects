@@ -5,12 +5,8 @@
 #https://www.pyimagesearch.com/2018/11/12/yolo-object-detection-with-opencv/
 
 
-
-
-
 #HOW TO USE:
 #python yolov3_video.py --input videos/car_chase_01.mp4 --output output/car_chase_01.avi --yolo yolo-coco
-
 
 # import the necessary packages
 import numpy as np
@@ -54,7 +50,6 @@ print("[INFO] loading YOLO from disk...")
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 ln = net.getLayerNames()
 ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
-
 
 
 # initialize the video stream, pointer to output video file, and
@@ -144,7 +139,6 @@ while True:
 				classIDs.append(classID)
 				
 				
-				
 	# apply non-maxima suppression to suppress weak, overlapping
 	# bounding boxes
 	idxs = cv2.dnn.NMSBoxes(boxes, confidences, args["confidence"],	args["threshold"])
@@ -162,7 +156,6 @@ while True:
 			cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
 			text = "{}: {:.4f}".format(LABELS[classIDs[i]], confidences[i])
 			cv2.putText(frame, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-			
 			
 			
 		# check if the video writer is None

@@ -31,9 +31,6 @@ cv2.imwrite('watchgray.png', img)
 
 
 
-
-
-
 #Using video feeds
 cap = cv2.VideoCapture(0) #This will return video from the first webcam on your computer.
 fourcc = cv2.VideoWriter_fourcc(*'XVID')

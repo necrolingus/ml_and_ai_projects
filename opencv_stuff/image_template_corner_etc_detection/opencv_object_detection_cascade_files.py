@@ -1,10 +1,7 @@
 import numpy as np
 import cv2
 
-
 #building your own cascades https://pythonprogramming.net/haar-cascade-object-detection-python-opencv-tutorial/
-
-
 # multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
 
 face_cascade = cv2.CascadeClassifier('cascade_face.xml')

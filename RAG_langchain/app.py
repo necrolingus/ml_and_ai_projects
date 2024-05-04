@@ -26,11 +26,6 @@ def format_docs(docs):
 	return "\n\n".join(doc.page_content for doc in docs)
 
 
-
-
-
-
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -65,7 +60,6 @@ def hello():
 	example_messages = prompt.invoke(
 		{"context": "filler context", "question": "filler question"}
 	).to_messages()
-	
 	
 	
 	template = """Use the following pieces of context to answer the question at the end.

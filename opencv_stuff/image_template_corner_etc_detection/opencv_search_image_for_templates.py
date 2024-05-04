@@ -3,8 +3,6 @@
 import cv2
 import numpy as np
 
-
-
 img_rgb = cv2.imread('rasppis.jpg')
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 
@@ -25,7 +23,6 @@ img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 # The _ is like a convention in Python for variables you don't want to use, or a "throwaway".
 
 
-
 template = cv2.imread('rasppis_template.jpg', 0) #0 means gray
 
 # We load the template and note the dimensions.
@@ -41,7 +38,6 @@ w, h = template.shape[::-1]
 res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
 threshold = 0.8
 loc = np.where(res >= threshold)
-
 
 
 #Finally, we mark all matches on the original image, using the coordinates we found in the gray image:

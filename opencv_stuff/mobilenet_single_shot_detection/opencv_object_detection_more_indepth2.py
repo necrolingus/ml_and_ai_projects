@@ -121,7 +121,6 @@ image = cv2.imread(args["image"])
 blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 0.007843, (300, 300), 127.5)
 
 
-
 # pass the blob through the network and obtain the detections and
 # predictions
 print("[INFO] computing object detections...")
@@ -135,8 +134,6 @@ detections = net.forward()
 #confidence is high enough (i.e. above the threshold), then we’ll display 
 #the prediction in the terminal as well as draw the prediction on the 
 #image with text and a colored bounding box
-
-
 
 
 # loop over the detections

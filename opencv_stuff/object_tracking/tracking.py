@@ -30,8 +30,6 @@
 #We will use MobileNet. Its lean. Yolov3 is too big and bad with overlapping objects
 
 
-
-
 #When we apply object detection we are determining where in an image/frame an object is. An object detector is 
 #also typically more computationally expensive, and therefore slower, than an object tracking algorithm. Examples 
 #of object detection algorithms include Haar cascades, HOG + Linear SVM, and deep learning-based object detectors 
@@ -63,13 +61,9 @@
 
 
 
-
-
 #We’ll then use dlib for its implementation of correlation filters. 
 #We could use OpenCV here as well; however, the dlib object tracking 
 #implementation was a bit easier to work with for this project.
-
-
 
 
 
@@ -93,8 +87,6 @@ import dlib
 import cv2
 
 
-
-
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--prototxt", required=True,
@@ -110,7 +102,6 @@ ap.add_argument("-c", "--confidence", type=float, default=0.4,
 ap.add_argument("-s", "--skip-frames", type=int, default=30,
 	help="# of skip frames between detections") #The number of frames to skip before running our DNN detector again on the tracked object.
 args = vars(ap.parse_args())
-
 
 
 # initialize the list of class labels MobileNet SSD was trained to
@@ -135,9 +126,6 @@ if not args.get("input", False):
 else:
 	print("[INFO] opening video file...")
 	vs = cv2.VideoCapture(args["input"])
-
-
-
 
 
 
@@ -379,7 +367,6 @@ while True:
 	# then update the FPS counter
 	totalFrames += 1
 	fps.update()	
-		
 		
 		
 		

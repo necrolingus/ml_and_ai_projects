@@ -1,13 +1,9 @@
 #https://pythonprogramming.net/corner-detection-python-opencv-tutorial/?completed=/grabcut-foreground-extraction-python-opencv-tutorial/
-
-
 #The purpose of detecting corners is to track things like motion, do 3D modeling, 
 #and recognize objects, shapes, and characters.
 
-
 import cv2
 import numpy as np
-
 
 img = cv2.imread('opencv-corner-detection-sample.jpg')
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

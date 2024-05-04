@@ -20,6 +20,7 @@ chroma_db_persist = 'c:/tmp/mytestChroma3/' #chroma will create the folders if t
 embedding_openai = OpenAIEmbeddings(openai_api_key = openai_key)
 our_query = "Whay is Nutun so secure?"
 
+
 # TO LOAD WEBSITE CONTENT
 # Only keep post title, headers, and content from the full HTML.
 # bs4_strainer = bs4.SoupStrainer(class_=("post-title", "post-header", "post-content"))
@@ -56,8 +57,6 @@ print(len(all_splits[0].page_content))
 
 
 
-
-
 # Now we need to index our 66 text chunks so that we can search over them at runtime. 
 # The most common way to do this is to embed the contents of each document split and insert these embeddings 
 # into a vector database (or vector store). 
@@ -78,8 +77,6 @@ from langchain_community.vectorstores import Chroma
 vectorstore = Chroma.from_documents(documents=all_splits, 
 									persist_directory=chroma_db_persist,
 									embedding=embedding_openai) #this actually calls openAI, most likely ada
-
-
 
 
 
